@@ -2,5 +2,32 @@ li.repo-item {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    list-style: none;
+}
+a {
+    display: flex;
+    flex: 1;
+
+}
+div.repo-info {
+    width: 100%;
+    text-align: left;
+    height: 1.5rem;
+    font-style: normal;
+    padding: .8rem 0 0 0 ;
+    line-height: 1.2rem;
+    box-shadow: 1px  1px 3px rgba(0,0,0,.4);
+    border-radius: 10px;
+    border-color: darkgray;
+    margin: .5rem;
+    font-size: 1.6rem;
+    line-height: 1rem;
+    font-weight: 100;
+    padding-left: 1rem;
+    height: 4rem;
+}
+.repo-info > .author-info {
+    margin-top: .5rem;
+    font-size: .8rem;
+    font-weight: 400;
+    color: rgba(0,0,0,.6)
 }

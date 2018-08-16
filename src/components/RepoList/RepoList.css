@@ -1,3 +1,9 @@
 ul { 
     list-style: none;
+    overflow: scroll;
+    min-height: 50vh;
+    max-height: 80vh;
+    width: 20rem;
+    /* border: solid 1px 1px black; */
+    margin: auto;
 }

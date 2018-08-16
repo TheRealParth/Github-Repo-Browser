@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './RepoItem.css';
 
-
 const RepoItem = ({
     id,
     name,
@@ -19,6 +18,9 @@ const RepoItem = ({
             <Link to={`/${id}`}>
                 <div className="repo-info">
                     {name}
+                    <div className="author-info">
+                        {`by: ${login}`}
+                    </div>
                 </div>
             </Link>
         </li>
