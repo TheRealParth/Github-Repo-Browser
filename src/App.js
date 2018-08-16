@@ -1,18 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import axios from 'axios';
+import RepoList from './components/RepoList';
+import RepoDescription from './components/RepoDescription';
+
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
+  state = {
+    repos: []
+  }
+  componentDidMount() {
+    axios.get('https://api.github.com/repositories')
+      .then(res => {
+        this.setState({
+          repos: res.data
+        })
+      })
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>
+          Github Repository Browser
+        </h1>
+        <Switch>
+          <Route exact path='/'>
+            <RepoList repos={this.state.repos} />
+          </Route>
+          <Route path='/:id' render={({ match }) => (<RepoDescription repos={this.state.repos} id={match.params.id} />)} />
+        </Switch>
       </div>
     );
   }
