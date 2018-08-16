@@ -1,0 +1,25 @@
+.container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+}
+.user-info {
+    display: flex;
+    flex-direction: row;
+}
+.user-image-container {
+    margin: 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.user-image-container .avatar {
+    width: 4rem;
+    height: 4rem;
+}
+
+.user-name { 
+    margin: auto;
+    font-weight: 400;
+    font-size: 1.2rem;
+}

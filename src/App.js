@@ -26,9 +26,12 @@ class App extends Component {
     return (
       <div className="App">
         <div className="container">
-          <h1>
-            Github Repository Browser
-        </h1>
+          <div className="App-header">
+            <h2>
+              Github Repository Browser
+            </h2>
+          </div>
+
           <Switch>
             <Route exact path='/'>
               <RepoList repos={this.state.repos} />
