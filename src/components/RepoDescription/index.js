@@ -42,12 +42,10 @@ const RepoDescription = ({ repos, id }) => {
                 </div>
             </div>
         )
-    } else {
-        return (
-            <h1>...Loading</h1>
-        )
     }
-
+    return (
+        <h1>...Loading</h1>
+    )
 }
 
 export default RepoDescription;
