@@ -23,6 +23,7 @@ class App extends Component {
 
   }
   render() {
+    const { repos, reposById } = this.state;
     return (
       <div className="App">
         <div className="container">
@@ -34,11 +35,11 @@ class App extends Component {
 
           <Switch>
             <Route exact path='/'>
-              <RepoList repos={this.state.repos} />
+              <RepoList repos={repos} />
             </Route>
             <Route path='/:id' render={
               ({ match }) => (
-                <RepoDescription repos={this.state.reposById} id={match.params.id} />
+                <RepoDescription repos={reposById} id={match.params.id} />
               )
             } />
           </Switch>

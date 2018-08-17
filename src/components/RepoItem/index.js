@@ -5,10 +5,7 @@ import './RepoItem.css';
 const RepoItem = ({
     id,
     name,
-    description,
     owner: {
-        avatar_url,
-        gravatar_id,
         login
 
     }
