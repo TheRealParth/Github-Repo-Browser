@@ -9,27 +9,27 @@ import './App.css';
 class App extends Component {
   state = {
     repos: [],
-    reposById: {}
+    reposById: {},
+    isLoading: true
   }
   componentDidMount() {
     axios.get('https://api.github.com/repositories')
       .then(res => {
         this.setState({
           repos: res.data,
-          reposById: keyBy(res.data, 'id')
+          reposById: keyBy(res.data, 'id'),
+          isLoading: false
         })
       })
-
-
   }
   render() {
-    const { repos, reposById } = this.state;
+    const { repos, reposById, isLoading } = this.state;
     return (
       <div className="App">
         <div className="container">
           <div className="App-header">
             <h2>
-              Github Repository Browser
+              {isLoading ? "...Loading Repositories" : "Github Repository Browser"}
             </h2>
           </div>
 
